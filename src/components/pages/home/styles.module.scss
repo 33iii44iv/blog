@@ -39,6 +39,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  pointer-events: none;
 }
 
 .mainText {
@@ -52,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 50;
   &:hover {
     cursor: pointer;
   }
@@ -69,6 +70,7 @@
 .upDown {
   margin-left: 45%;
   text-align: right;
+  pointer-events: auto;
   img {
     z-index: 100;
     opacity: .2;

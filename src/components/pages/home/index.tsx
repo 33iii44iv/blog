@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 
 import ReactDOM from "react-dom"
-import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 // import { Parallax, ParallaxLayer } from '@react-spring/addons'
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax"
 
@@ -77,7 +77,7 @@ export default function Index() {
       personWidth: "200px",
       upDownIconType: UpIcon,
       scrollTo: 0
-    },
+    }
   ]
 
   const soulSmokeParams: parallaxItem[] = [
@@ -116,36 +116,37 @@ export default function Index() {
             </ParallaxLayer>
           ))}
 
+          {/*github twitter*/}
+          <ParallaxLayer offset={1.05} speed={-1} style={{ pointerEvents: "none" }}>
+            <div style={{ marginLeft: "45%", textAlign: "right" }}>
+              <div style={{ marginRight: "5%" }}>
+                <a href="https://github.com/33iii44iv" style={{ pointerEvents: "auto" }}>
+                  <img src={GithubIcon} style={{ minWidth: "50px", width: "5%", zIndex: 10000 }} />
+                </a>
+                <a href="https://twitter.com/33iii44iv" style={{ pointerEvents: "auto" }}>
+                  <img src={TwitterIcon} style={{ minWidth: "50px", width: "5%", zIndex: 10000, marginLeft: "10px" }} />
+                </a>
+              </div>
+            </div>
+          </ParallaxLayer>
+
           {/*ロゴ*/}
           <ParallaxLayer offset={0} speed={-1} className={Styles.logoStyle} style={{ pointerEvents: "none" }}>
             <span style={{ pointerEvents: "auto" }} className={Styles.shadowWhite} onClick={() => parallax.scrollTo(0)}><Logo
               length={200} /></span>
           </ParallaxLayer>
 
-          {/*github twitter*/}
-          <ParallaxLayer offset={1.05} speed={-1}>
-            <div style={{ marginLeft: "45%", textAlign: "right" }}>
-              <div style={{ marginRight: "5%" }}>
-                <a href="https://github.com/33iii44iv" style={{ pointerEvents: "auto" }}>
-                  <img src={GithubIcon} style={{ minWidth: "50px", width: "5%", zIndex: 100 }} />
-                </a>
-                <a href="https://twitter.com/33iii44iv" style={{ pointerEvents: "auto" }}>
-                  <img src={TwitterIcon} style={{ minWidth: "50px", width: "5%", zIndex: 100, marginLeft: "10px" }} />
-                </a>
-              </div>
-            </div>
-          </ParallaxLayer>
-
           {/*ページコンテンツ*/}
           {pageContents.map(item => (
             <div key={item.pageNum}>
-              <ParallaxLayer offset={item.pageNum + 0.15} speed={1}>
-                <div className={Styles.mainText}>{item.japaneseText}<br/>{item.englishText}</div>
+              <ParallaxLayer offset={item.pageNum + 0.15} speed={1} style={{ pointerEvents: "none" }}>
+                <div className={Styles.mainText}>{item.japaneseText}<br />{item.englishText}</div>
               </ParallaxLayer>
-              <ParallaxLayer offset={item.pageNum} speed={0} className={Styles.person}>
+              <ParallaxLayer offset={item.pageNum} speed={0} className={Styles.person}
+                             style={{ pointerEvents: "none" }}>
                 <img className={Styles.shadowXL} src={item.personType} style={{ width: item.personWidth }} />
               </ParallaxLayer>
-              <ParallaxLayer offset={item.pageNum + 0.88} speed={0}>
+              <ParallaxLayer offset={item.pageNum + 0.88} speed={0} style={{ pointerEvents: "none" }}>
                 <div className={Styles.upDown}>
                   <img src={item.upDownIconType} onClick={() => parallax.scrollTo(item.scrollTo)} />
                 </div>
