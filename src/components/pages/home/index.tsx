@@ -5,10 +5,8 @@ import ReactDOM from "react-dom"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 // import { Parallax, ParallaxLayer } from '@react-spring/addons'
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax"
-
 // @ts-ignore
 import Styles from "./styles.module.scss"
-
 import SEO from "../../atoms/seo"
 import Logo from "../../atoms/logo"
 // @ts-ignore
