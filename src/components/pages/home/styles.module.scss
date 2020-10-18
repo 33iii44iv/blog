@@ -1,0 +1,81 @@
+.main {
+  min-height: 100vh;
+  background-color: #444;
+}
+
+.header {
+  position: fixed;
+  height: 80px;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: block;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.body {
+  width: 80vw;
+  height: 80vh;
+}
+
+.siteTitle {
+  //position: fixed;
+  margin-top: 5px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.person {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.smoke {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainText {
+  text-align: center;
+  font-family: dnp-shuei-gothic-kin-std, sans-serif;
+  font-weight: 600;
+  filter: drop-shadow(0px 3px 1px rgba(255,255,255, 1));
+}
+
+.logoStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.shadowWhite {
+  filter: drop-shadow(0px 3px 1px rgba(255,255,255, .15));
+}
+
+.shadowXL {
+  filter: drop-shadow(0px 20px 20px rgba(0,0,0,.45));
+}
+
+.upDown {
+  margin-left: 45%;
+  text-align: right;
+  img {
+    z-index: 100;
+    opacity: .2;
+    width: 70px;
+    margin-right: 5%;
+  }
+  img:hover {
+    cursor: pointer;
+  }
+}
