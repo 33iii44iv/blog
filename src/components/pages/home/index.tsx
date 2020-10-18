@@ -1,8 +1,10 @@
 // @ts-ignore
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 
 import ReactDOM from "react-dom"
-import { Parallax, ParallaxLayer } from "@react-spring/parallax"
+import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
+// import { Parallax, ParallaxLayer } from '@react-spring/addons'
+// import { Parallax, ParallaxLayer } from "@react-spring/parallax"
 
 // @ts-ignore
 import Styles from "./styles.module.scss"
@@ -96,7 +98,7 @@ export default function Index() {
     <div>
       <SEO title="Home" />
       <div>
-        <Parallax pages={3} ref={(ref) => (setParallax(ref))} style={{ background: "#efefef" }}>
+        <Parallax pages={pageContents.length} ref={(ref) => (setParallax(ref))} style={{ background: "#efefef" }}>
 
           {/*背景*/}
           <ParallaxLayer offset={0} speed={-0.1} factor={3}
