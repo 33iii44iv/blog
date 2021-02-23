@@ -5,29 +5,30 @@
   "version": "0.1.0",
   "author": "33iii444iv",
   "dependencies": {
-    "@react-spring/addons": "^9.0.0-beta.33",
     "@react-spring/parallax": "^9.0.0-rc.3",
-    "gatsby": "^2.24.67",
+    "gatsby": "^2.32.4",
     "gatsby-background-image": "^1.1.2",
     "gatsby-image": "^2.4.20",
     "gatsby-plugin-google-analytics": "^2.3.19",
     "gatsby-plugin-manifest": "^2.4.33",
     "gatsby-plugin-offline": "^3.2.30",
-    "gatsby-plugin-react-helmet": "^3.3.12",
+    "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sass": "^2.3.16",
     "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^2.6.38",
+    "gatsby-plugin-typegen": "^2.2.4",
+    "gatsby-plugin-typescript": "^2.12.0",
     "gatsby-source-filesystem": "^2.3.32",
     "gatsby-transformer-sharp": "^2.5.16",
-    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0",
-    "react-spring": "^8.0.27"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "node-sass": "^4.14.1",
+    "prettier": "2.1.2",
+    "typescript": "^4.1.5"
   },
   "keywords": [
     "gatsby"
@@ -40,6 +41,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "typecheck": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
