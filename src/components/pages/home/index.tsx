@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Parallax, ParallaxLayer } from "@react-spring/parallax"
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 
 import Styles from "./styles.module.scss"
 import SEO from "../../atoms/seo"
