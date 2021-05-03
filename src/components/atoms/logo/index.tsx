@@ -1,9 +1,11 @@
-// @ts-ignore
 import React from "react"
-// @ts-ignore
 import Styles from "./styles.module.scss"
 
-export default function index({ length }) {
+interface Props {
+  length: number
+}
+
+const Index: React.FC<Props> = ({ length }) => {
 
   return (
     <div
@@ -12,6 +14,8 @@ export default function index({ length }) {
         width: `${length}px`,
         height: `${length}px`
       }}
-    ></div>
+    > </div>
   )
 }
+
+export default Index

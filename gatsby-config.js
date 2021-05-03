@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `33iii44iv`,
     description: `33iii44iv のプロフィールページです。`,
-    author: `@33iii44iv`
+    author: `@33iii44iv`,
+    siteUrl: `https://33iii44iv.xyz/`,
   },
   plugins: [
     `gatsby-plugin-sass`,
