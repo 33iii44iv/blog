@@ -52,14 +52,14 @@ const BlogIndex: React.FC<Props> = ({ data, location }) => {
         >
           <li className="next-prev-title">
             {hasPreviousPage && (
-              <Link to={currentPage === 2 ? `/` : `/${currentPage - 1}`} rel="prev">
+              <Link to={currentPage === 2 ? `/blog-list/` : `/blog-list/${currentPage - 1}`} rel="prev">
                 ← 新しい
               </Link>
             )}
           </li>
           <li className="next-prev-title">
             {hasNextPage && (
-              <Link to={`/${currentPage + 1}`} rel="next">
+              <Link to={`/blog-list/${currentPage + 1}`} rel="next">
                 古い →
               </Link>
             )}
