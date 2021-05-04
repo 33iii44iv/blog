@@ -1,5 +1,5 @@
 import React from "react"
-import Styles from "./styles.module.scss"
+import * as Styles from "./styles.module.scss"
 
 interface Props {
   length: number
