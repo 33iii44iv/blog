@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 
-import Styles from "./styles.module.scss"
+import { Link } from "gatsby"
+
+import * as Styles from "./styles.module.scss"
 import SEO from "../../atoms/seo"
 import Logo from "../../atoms/logo"
 
@@ -13,6 +15,7 @@ import UpIcon from "../../../images/home_parts/up.svg"
 import Network from "../../../images/home_parts/network.svg"
 import TwitterIcon from "../../../images/home_parts/twitter_icon.svg"
 import GithubIcon from "../../../images/home_parts/github_icon.svg"
+import BlogIcon from "../../../images/home_parts/blog_icon.svg"
 
 
 type pageItem = {
@@ -84,8 +87,11 @@ export default function Index() {
           <ParallaxLayer offset={1.05} speed={-1} style={{ pointerEvents: "none" }}>
             <div style={{ marginLeft: "45%", textAlign: "right" }}>
               <div style={{ marginRight: "5%" }}>
+                <Link to="/blog-list" style={{ pointerEvents: "auto" }}>
+                  <img src={BlogIcon} style={{ minWidth: "50px", width: "5%", zIndex: 10000 }} alt="" />
+                </Link>
                 <a href="https://github.com/33iii44iv" style={{ pointerEvents: "auto" }}>
-                  <img src={GithubIcon} style={{ minWidth: "50px", width: "5%", zIndex: 10000 }} alt="" />
+                  <img src={GithubIcon} style={{ minWidth: "50px", width: "5%", zIndex: 10000, marginLeft: "10px" }} alt="" />
                 </a>
                 <a href="https://twitter.com/33iii44iv" style={{ pointerEvents: "auto" }}>
                   <img src={TwitterIcon} style={{ minWidth: "50px", width: "5%", zIndex: 10000, marginLeft: "10px" }}

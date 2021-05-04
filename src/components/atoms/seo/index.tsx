@@ -1,18 +1,15 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-// @ts-ignore
 import React from "react"
-// @ts-ignore
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import SiteIcon from "../../../images/gatsby-icon.png"
 
-export default function Index({ description, lang, meta, title }) {
+interface Props {
+  description?: string
+  lang?: string
+  title: string
+}
+
+const Index: React.FC<Props> = ({ description, lang, title }) =>  {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,7 +17,10 @@ export default function Index({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+            author {
+              name
+            }
+            siteUrl
           }
         }
       }
@@ -29,6 +29,7 @@ export default function Index({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const siteUrl = site.siteMetadata?.siteUrl
 
   return (
     <Helmet
@@ -36,7 +37,7 @@ export default function Index({ description, lang, meta, title }) {
         lang
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ''}
       meta={[
         {
           name: `description`,
@@ -44,11 +45,11 @@ export default function Index({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title
+          content: defaultTitle
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: title
         },
         {
           property: `og:type`,
@@ -60,17 +61,21 @@ export default function Index({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``
+          content: site.siteMetadata?.author.name || ``
         },
         {
           name: `twitter:title`,
-          content: title
+          content: defaultTitle
         },
         {
           name: `twitter:description`,
-          content: metaDescription
-        }
-      ].concat(meta)}
+          content: title
+        },
+        {
+          property: `twitter:image`,
+          content: `${siteUrl}${SiteIcon}`,
+        },
+      ]}
     >
       <script type="application/javascript">{`
         {
@@ -84,19 +89,18 @@ export default function Index({ description, lang, meta, title }) {
             })(document);
         }
     `}</script>
+      <script>{`
+        (function(d) {
+        var config = {
+        kitId: 'iwn7isa',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    `}</script>
     </Helmet>
   )
 }
 
-Index.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``
-}
-
-Index.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired
-}
+export default Index

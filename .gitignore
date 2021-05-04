@@ -70,3 +70,6 @@ yarn-error.log
 
 # jetbrians
 .idea/
+
+# typescript
+src/__generated__/gatsby-types.ts
